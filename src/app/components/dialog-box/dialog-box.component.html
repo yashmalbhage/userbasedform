@@ -1,0 +1,46 @@
+<div class="formcontainer">
+    <form #userForm="ngForm" (ngSubmit)="savee(userForm)">
+        <app-custom-input label="Size" inputType="number" placeholder="Enter size" name="size" [(ngModel)]="formData.size" [ngModelOptions]="{ standalone: true }">
+        </app-custom-input>
+        <br/>
+        <app-custom-input label="Position" inputType="number" placeholder="Enter position" name="position" [(ngModel)]="formData.position" [ngModelOptions]="{ standalone: true }">
+        </app-custom-input>
+        <br/>
+
+        <mat-radio-group name="radio" [(ngModel)]="formData.radio" required>
+            <mat-radio-button value="radio1">Radio 1</mat-radio-button>
+            <mat-radio-button value="radio2">Radio 2</mat-radio-button>
+        </mat-radio-group>
+        <br/>
+
+        <mat-checkbox name="user1" [(ngModel)]="formData.user1" [disabled]="user === 'user1'">
+            User 1
+        </mat-checkbox>
+        <br/>
+
+
+        <mat-checkbox name="user2" [(ngModel)]="formData.user2" [disabled]="user === 'user2'">
+            User 2
+        </mat-checkbox>
+        <br/>
+
+
+        <app-custom-input [label]="inputLabel3" [inputType]="inputType2" [placeholder]="inputLabel3" [(ngModel)]="formData.city" name="city"></app-custom-input>
+        <br/>
+
+        <app-custom-input [label]="inputLabel4" [inputType]="inputType2" [placeholder]="inputLabel4" [(ngModel)]="formData.state" name="state"></app-custom-input>
+        <br/>
+
+        <div>
+            <button mat-raised-button color="primary" type="submit" [disabled]="userForm.invalid">
+            Save
+          </button>
+            <button mat-button type="button" (click)="cancell()">Cancel</button>
+        </div>
+
+
+
+
+    </form>
+
+</div>

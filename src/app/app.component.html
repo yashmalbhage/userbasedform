@@ -1,0 +1,4 @@
+<button mat-button (click)="openForm('user1')">User 1</button>
+<button mat-button (click)="openForm('user2')">User 2</button>
+
+<app-dialog-box *ngIf="showDialog" [user]="selectedUser" (cancel)="onCancel()" (save)="onSave($event)"></app-dialog-box>
